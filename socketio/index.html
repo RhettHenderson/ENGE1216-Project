@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Communicating between a Webpage and an Arduino</title>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js'></script>
+	</head>
+	<body>
+		<h1>Communcating between the Board and the Web<h1>
+		
+		<div id="sample"></div>
+		
+		<script>
+			var socket = io();
+			
+			socket.on('data', function(data){
+				console.log(data);
+				
+				document.getElementById('sample').innerHTML = data;
+			});
+		</script>
+	</body>
+</html>
